@@ -1,15 +1,15 @@
 "use client";
 
 import { Button } from "./ui/button";
-import Image from 'next/image'
+import Image from "next/image";
 import { DotMatrix } from "./ui/dot-matrix";
 
 export default function Hero() {
   return (
     <div id="home" className="section-wrapper bg-beige">
       <div className="absolute inset-0 overflow-hidden">
-        <DotMatrix 
-          className="absolute left-0 w-2/5 h-full pointer-events-none -mt-2" 
+        <DotMatrix
+          className="absolute left-0 w-2/5 h-full pointer-events-none -mt-2"
           dotColor="#e4d5ff"
           dotSize={2}
           gridSize={30}
@@ -102,21 +102,26 @@ export default function Hero() {
               <div className="flex flex-col items-center lg:gap-2 animate-fade-scale opacity-0 animation-delay-400">
                 <div className="flex items-center gap-1">
                   <div className="flex -space-x-2">
-                    {["Adrian", "Avery", "Leo", "Brooklynn", "Aidan"].map((name) => (
-                      <Image
-                        key={name}
-                        src={`https://api.dicebear.com/7.x/notionists/svg?seed=${name}`}
-                        alt={`${name}'s avatar`}
-                        width={26}
-                        height={26}
-                        className="w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-purple-50 border-2 border-white"
-                      />
-                    ))}
+                    {["Adrian", "Avery", "Leo", "Brooklynn", "Aidan"].map(
+                      (name) => (
+                        <Image
+                          key={name}
+                          src={`https://api.dicebear.com/7.x/notionists/svg?seed=${name}`}
+                          alt={`${name}'s avatar`}
+                          width={26}
+                          height={26}
+                          className="w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-purple-50 border-2 border-white"
+                        />
+                      )
+                    )}
                   </div>
                   <div className="flex-col items-center ml-2">
                     <div className="flex gap-1 -mb-2 lg:-mb-1">
                       {[...Array(5)].map((_, i) => (
-                        <span key={i} className="text-yellow-500 text-[14px] lg:text-[18px]">
+                        <span
+                          key={i}
+                          className="text-yellow-500 text-[14px] lg:text-[18px]"
+                        >
                           ★
                         </span>
                       ))}

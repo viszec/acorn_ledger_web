@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Acorn Ledger",
-  description: "Access all your accounts in one elegant dashboard, with seamless cross-bank integration and bank-grade security.",
+  description:
+    "Access all your accounts in one elegant dashboard, with seamless cross-bank integration and bank-grade security.",
 };
 
 export default function RootLayout({

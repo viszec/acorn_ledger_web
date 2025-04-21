@@ -9,7 +9,7 @@ import {
   RefreshCw,
 } from "lucide-react";
 import Image from "next/image";
-import { useInView } from '@/hooks/useInView';
+import { useInView } from "@/hooks/useInView";
 
 interface Feature {
   title: string;
@@ -100,7 +100,10 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="section-wrapper lg:pt-32 pt-12 pb-4 px-4 relative">
+    <section
+      id="about"
+      className="section-wrapper lg:pt-32 pt-12 pb-4 px-4 relative"
+    >
       {/* Background Grid Pattern - Right Half */}
       <div
         className="absolute right-0 w-1/3 h-1/5 inset-y-0 bg-[radial-gradient(#e4d5ff_2px,transparent_2px)] bg-[size:30px_30px]"
@@ -112,15 +115,15 @@ export default function About() {
 
       <div className="section-container pb-24">
         {/* Tech Stack Section */}
-        <div 
+        <div
           ref={techStackRef}
           className={`text-center mb-10 md:mb-20 opacity-0 ${
-            techStackInView ? 'animate-slide-up' : ''
+            techStackInView ? "animate-slide-up" : ""
           }`}
         >
           <p className="mb-4 md:mb-8 text-3xl md:text-4xl font-bold">
             <span className="font-garamond italic font-bold text-3xl md:text-4xl text-purple-600">
-              Acorn Ledger 
+              Acorn Ledger
             </span>
             <span className="text-gray-700 text-2xl md:text-3xl leading-tight">
               {" "}
@@ -130,9 +133,9 @@ export default function About() {
           <div className="logo-scroll-container">
             <div className="logo-scroll">
               {[...techLogos, ...techLogos].map((logo, index) => (
-                <Image 
-                  key={`${logo.alt}-${index}`} 
-                  {...logo} 
+                <Image
+                  key={`${logo.alt}-${index}`}
+                  {...logo}
                   alt={logo.alt}
                   width={Math.floor(logo.width * 0.8)}
                   height={Math.floor(logo.height * 0.8)}
@@ -145,13 +148,15 @@ export default function About() {
 
         {/* What is Acorn Section */}
         <div className="section-container">
-          <div 
+          <div
             ref={whatIsRef}
             className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-24 items-center lg:pt-10 pb-12"
           >
-            <div className={`card-gradient rounded-2xl w-full h-auto md:w-[580px] md:h-[400px] opacity-0 ${
-              whatIsInView ? 'animate-slide-in' : ''
-            }`}>
+            <div
+              className={`card-gradient rounded-2xl w-full h-auto md:w-[580px] md:h-[400px] opacity-0 ${
+                whatIsInView ? "animate-slide-in" : ""
+              }`}
+            >
               <Image
                 src="/images/whatIsAcorn.png"
                 alt="Acorn Robot"
@@ -161,9 +166,11 @@ export default function About() {
                 loading="lazy"
               />
             </div>
-            <div className={`space-y-6 opacity-0 ${
-              whatIsInView ? 'animate-slide-in animation-delay-200' : ''
-            }`}>
+            <div
+              className={`space-y-6 opacity-0 ${
+                whatIsInView ? "animate-slide-in animation-delay-200" : ""
+              }`}
+            >
               <h2 className="lg:text-2xl text-xl font-bold">
                 Redefining Personal Finance Management
               </h2>
@@ -192,13 +199,15 @@ export default function About() {
           </div>
 
           {/* Why Choose Acorn Section */}
-          <div 
+          <div
             ref={whyChooseRef}
             className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center lg:pb-28"
           >
-            <div className={`space-y-6 opacity-0 ${
-              whyChooseInView ? 'animate-slide-in' : ''
-            }`}>
+            <div
+              className={`space-y-6 opacity-0 ${
+                whyChooseInView ? "animate-slide-in" : ""
+              }`}
+            >
               <div className="inline-block px-4 lg:px-6 lg:py-1 py-0.5 bg-white rounded-full border border-purple-600">
                 <span className="lg:text-sm text-xs text-purple-600 font-semibold">
                   Benefits
@@ -227,9 +236,11 @@ export default function About() {
                 ))}
               </div>
             </div>
-            <div className={`card-gradient mt-6 md:mt-14 rounded-2xl w-full h-auto md:w-[560px] md:h-[400px] opacity-0 ${
-              whyChooseInView ? 'animate-slide-in animation-delay-200' : ''
-            }`}>
+            <div
+              className={`card-gradient mt-6 md:mt-14 rounded-2xl w-full h-auto md:w-[560px] md:h-[400px] opacity-0 ${
+                whyChooseInView ? "animate-slide-in animation-delay-200" : ""
+              }`}
+            >
               <Image
                 src="/images/whyChooseAcorn.jpg"
                 alt="Acorn City"

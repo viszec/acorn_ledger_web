@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Logo from "../common/Logo";
+import Image from "next/image";
 import { FOOTER_NAVIGATION } from "@/constants/navigation";
 import { useRouter, usePathname } from "next/navigation";
 import type { AppRoute } from "@/types/navigation";
@@ -12,19 +12,19 @@ export default function Footer() {
 
   const handleSectionClick = async (href: AppRoute) => {
     // if not on home page, navigate to home page
-    if (pathname !== '/') {
-      await router.push('/');
-      await new Promise(resolve => setTimeout(resolve, 100));
+    if (pathname !== "/") {
+      await router.push("/");
+      await new Promise((resolve) => setTimeout(resolve, 100));
     }
 
-    const sectionId = String(href).replace('/#', '');
+    const sectionId = String(href).replace("/#", "");
     const targetSection = document.getElementById(sectionId);
-    
+
     // retry mechanism: ensure section element is loaded
     if (!targetSection) {
       const maxRetries = 5;
       let retryCount = 0;
-      
+
       const findSection = setInterval(() => {
         const section = document.getElementById(sectionId);
         if (section || retryCount >= maxRetries) {
@@ -34,11 +34,12 @@ export default function Footer() {
             const targetPosition = section.offsetTop - headerHeight;
             window.scrollTo({
               top: targetPosition,
-              behavior: 'smooth'
+              behavior: "smooth",
             });
             // update URL, remove #
-            const cleanUrl = href === '/#home' ? '/' : (href as string).replace('/#', '/');
-            window.history.pushState({}, '', cleanUrl);
+            const cleanUrl =
+              href === "/#home" ? "/" : (href as string).replace("/#", "/");
+            window.history.pushState({}, "", cleanUrl);
           }
         }
         retryCount++;
@@ -50,21 +51,33 @@ export default function Footer() {
     const targetPosition = targetSection.offsetTop - headerHeight;
     window.scrollTo({
       top: targetPosition,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
 
     // update URL, remove #
-    const cleanUrl = href === '/#home' ? '/' : (href as string).replace('/#', '/');
-    window.history.pushState({}, '', cleanUrl);
+    const cleanUrl =
+      href === "/#home" ? "/" : (href as string).replace("/#", "/");
+    window.history.pushState({}, "", cleanUrl);
   };
 
   return (
     <footer className="section-wrapper">
-      <div className="section-container lg:py-16 py-8">
+      <div className="px-4 lg:px-20 py-4 lg:py-8">
         <div className="flex flex-col md:flex-row lg:justify-between justify-center lg:items-center lg:gap-20 gap-4 px-4 lg:px-0">
           {/* Logo and Description */}
           <div className="mb-2 lg:mb-12">
-            <Logo />
+            <div className="flex items-center gap-2">
+              <Image
+                src="/logo.svg"
+                alt="Acorn Ledger"
+                width={42}
+                height={42}
+                className="w-10 h-10"
+              />
+              <span className="text-2xl lg:text-3xl sm:text-sm style-script-regular text-purple-600 pt-1 text-gradient">
+                Acorn Ledger
+              </span>
+            </div>
             <p className="mt-4 lg:text-sm text-xs text-gray-600 lg:max-w-[60%] max-w-full">
               Your personal finance companion. Track, manage, and grow your
               wealth with smart insights and automated bookkeeping.
@@ -72,7 +85,7 @@ export default function Footer() {
           </div>
 
           {/* Links Grid */}
-          <div className="grid lg:grid-cols-2 lg:gap-8 gap-4 lg:mr-16 mr-4">
+          <div className="grid lg:grid-cols-2 lg:gap-8 gap-4 mr-4">
             {/* Company Column */}
             <div>
               <h3 className="lg:text-base text-sm font-semibold text-gray-900 lg:mb-4 mb-2">
@@ -123,7 +136,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="lg:mt-16 mt-4 pt-8 border-t border-gray-200">
+        <div className="lg:mt-16 mt-4 pt-4 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center lg:gap-4 gap-2">
             <div className="flex items-center lg:gap-4 gap-2">
               {FOOTER_NAVIGATION.social.items.map((item) => (
