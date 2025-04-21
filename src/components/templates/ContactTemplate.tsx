@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { contactContent } from "@/config/content/contact";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
+import Link from "next/link";
 import {
   Select,
   SelectContent,
@@ -199,12 +200,12 @@ export function ContactTemplate({
                   <p className="text-gray-600 mb-4">{method.description}</p>
                   <div className="flex items-center gap-2 text-purple-600 border-b border-gray-200 pb-4">
                     <Mail className="w-4 h-4" />
-                    <a
+                    <Link
                       href={`mailto:${method.email}`}
                       className="text-sm hover:underline"
                     >
                       {method.email}
-                    </a>
+                    </Link>
                   </div>
                   <div className="flex items-center gap-2 text-gray-500 mt-2">
                     <Clock className="w-4 h-4" />

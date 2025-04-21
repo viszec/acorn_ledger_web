@@ -1,6 +1,8 @@
 import { termsOfServiceContent } from "@/config/content/terms-of-service";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
+import Link from "next/link";
+
 export function TermsOfServiceTemplate({
   content,
 }: {
@@ -71,12 +73,12 @@ export function TermsOfServiceTemplate({
                 </h2>
                 <p className="text-gray-600 mt-4 text-sm">
                   For any questions regarding these terms, please contact us at:
-                  <a
+                  <Link
                     href={`mailto:${content.contactEmail}`}
                     className="text-purple-600 ml-2"
                   >
                     {content.contactEmail}
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>

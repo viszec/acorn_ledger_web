@@ -18,11 +18,11 @@ export default function Navigation({ className = "" }) {
       await new Promise((resolve) => setTimeout(resolve, 100));
     }
 
-    // 获取目标 section
+    // Get section
     const sectionId = id.replace("/#", "");
     const targetSection = document.getElementById(sectionId);
 
-    // 重试机制：确保 section 元素已加载
+    // retry mechanism: ensure section element is loaded
     if (!targetSection) {
       const maxRetries = 5;
       let retryCount = 0;
@@ -38,7 +38,7 @@ export default function Navigation({ className = "" }) {
               top: targetPosition,
               behavior: "smooth",
             });
-            // 更新 URL
+            //update URL
             const cleanUrl = id === "/#home" ? "/" : id.replace("/#", "/");
             window.history.pushState({}, "", cleanUrl);
           }

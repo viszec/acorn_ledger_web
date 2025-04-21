@@ -1,7 +1,7 @@
 import { privacyPolicyContent } from "@/config/content/privacy-policy";
 import Footer from "../layout/Footer";
 import Header from "../layout/Header";
-
+import Link from "next/link";
 export function PrivacyPolicyTemplate({
   content,
 }: {
@@ -52,12 +52,12 @@ export function PrivacyPolicyTemplate({
                 <p className="text-gray-600 text-sm mt-4">
                   If you have any questions about our Privacy Policy, please
                   contact us at:
-                  <a
+                  <Link
                     href={`mailto:${content.contactEmail}`}
                     className="text-purple-600 ml-2"
                   >
                     {content.contactEmail}
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>

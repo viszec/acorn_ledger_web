@@ -26,6 +26,7 @@ export function DotMatrix({
 }: DotMatrixProps) {
   const [dots, setDots] = useState<DotPosition[]>([]);
   const highlightedDots = useRef<number[]>([]);
+  const dotsLengthRef = useRef<number>(0);
 
   useEffect(() => {
     const updateDots = () => {
@@ -49,6 +50,7 @@ export function DotMatrix({
       }
 
       setDots(dotPositions);
+      dotsLengthRef.current = dotPositions.length;
 
       // 更平滑的点变化逻辑
       highlightedDots.current = Array.from(
@@ -69,7 +71,7 @@ export function DotMatrix({
     updateDots();
 
     const interval = setInterval(() => {
-      const totalDots = dots.length;
+      const totalDots = dotsLengthRef.current;
       if (totalDots === 0) return;
 
       highlightedDots.current = Array.from(
