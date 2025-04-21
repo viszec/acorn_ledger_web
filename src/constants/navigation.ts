@@ -57,21 +57,21 @@ export const FOOTER_NAVIGATION: FooterNavigation = {
   social: {
     title: "Social",
     items: [
-      {
-        title: "X",
-        href: "https://x.com/acornledger" as AppRoute,
-        external: true,
-      },
+      // {
+      //   title: "X",
+      //   href: "https://x.com/acornledger" as AppRoute,
+      //   external: true,
+      // },
       {
         title: "GitHub",
-        href: "https://github.com/acornledger" as AppRoute,
+        href: "https://github.com/viszec/acorn_ledger_app" as AppRoute,
         external: true,
       },
-      {
-        title: "Discord",
-        href: "https://discord.gg/acornledger" as AppRoute,
-        external: true,
-      },
+      // {
+      //   title: "Discord",
+      //   href: "https://discord.gg/acornledger" as AppRoute,
+      //   external: true,
+      // },
       {
         title: "Email",
         href: "mailto:hello@acornledger.io" as AppRoute,
