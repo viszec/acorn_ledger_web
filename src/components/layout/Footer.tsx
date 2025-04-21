@@ -124,7 +124,7 @@ export default function Footer() {
                   <li key={item.title}>
                     <Link
                       href={item.href}
-                      className="text-xs text-gray-600 hover:text-purple-600 transition-colors"
+                      className="lg:text-sm text-xs text-gray-600 hover:text-purple-600 transition-colors"
                     >
                       {item.title}
                     </Link>
@@ -143,7 +143,7 @@ export default function Footer() {
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="text-purple-700 hover:text-purple-400 transition-colors text-xs"
+                  className="text-purple-700 hover:text-purple-400 transition-colors text-xs lg:text-sm"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -152,14 +152,14 @@ export default function Footer() {
               ))}
             </div>
             <p className="lg:text-sm text-xs text-gray-600">
-              © {new Date().getFullYear()} • Acorn Ledger All rights reserved.
+              © {new Date().getFullYear()} Acorn Ledger, All rights reserved.
             </p>
             <div className="flex items-center lg:gap-6 gap-2">
               {FOOTER_NAVIGATION.legal.items.map((item) => (
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="text-xs text-gray-600 hover:text-purple-600 transition-colors"
+                  className="text-xs lg:text-sm text-gray-600 hover:text-purple-600 transition-colors"
                 >
                   {item.title}
                 </Link>
