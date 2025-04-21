@@ -16,7 +16,7 @@ import {
   MonitorSpeaker,
   Loader,
 } from "lucide-react";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 type IconType =
   | typeof LandmarkIcon
@@ -37,9 +37,9 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15
-    }
-  }
+      staggerChildren: 0.15,
+    },
+  },
 };
 
 const itemVariants = {
@@ -48,9 +48,9 @@ const itemVariants = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.5
-    }
-  }
+      duration: 0.5,
+    },
+  },
 };
 
 export default function Featured() {
@@ -94,8 +94,11 @@ export default function Featured() {
   ];
 
   return (
-    <div id="features" className="lg:pt-32 pt-12 lg:pb-20 pb-8 grid-pattern-subtle">
-      <motion.div 
+    <div
+      id="features"
+      className="lg:pt-32 pt-12 lg:pb-20 pb-8 grid-pattern-subtle"
+    >
+      <motion.div
         className="featured-section-container"
         initial="hidden"
         whileInView="visible"
@@ -109,7 +112,7 @@ export default function Featured() {
           }}
           className="w-full"
         >
-          <motion.div 
+          <motion.div
             className="flex justify-between items-center lg:mb-16 mb-8"
             variants={itemVariants}
           >

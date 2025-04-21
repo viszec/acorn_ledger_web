@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Image from 'next/image';
+import Image from "next/image";
 
 type FormData = {
   name: string;

@@ -26,7 +26,9 @@ export function PrivacyPolicyTemplate({
                   <h2 className="text-xl font-semibold text-gray-900">
                     {section.title}
                   </h2>
-                  <p className="text-gray-600 mt-4 text-sm">{section.content}</p>
+                  <p className="text-gray-600 mt-4 text-sm">
+                    {section.content}
+                  </p>
 
                   {section.items?.map((item) => (
                     <div key={item.title} className="mt-6">
